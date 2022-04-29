@@ -7,7 +7,7 @@ converts 50k data to input for cervus
 * pandas
 
 ## Installation
-git clone https://github.com/Jwebster89/GATC.git
+`git clone https://github.com/Jwebster89/GATC.git`
 
 ## Quick Usage
 GATC can be run as follows using the final report from a 50k Array and a VCF file that describes your panel for a single sample
