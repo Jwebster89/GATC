@@ -14,14 +14,16 @@ def main():
     required = parser.add_argument_group('Required Arguments')
     required.add_argument("-i", "--input", help="50k Final Report input file")
     required.add_argument("-v", "--vcf", help="VCF of loci to extract from 50k")
-    optional = parser.add_argument_group('Optional Arguments')
-    optional.add_argument("-h", "--help", action="help", help="show this help message and exit")
 
+    optional = parser.add_argument_group('Optional Arguments')
+    optional.add_argument("-c", "--cervus_parse", help="if a previous cervus_parse output is given, GATC will add the 50k results to it")
+    optional.add_argument("-h", "--help", action="help", help="show this help message and exit")
     args=parser.parse_args()
     input=args.input
     vcf=args.vcf
+    cp=args.cervus_parse
 
-    job=GATC(input,vcf)
+    job=GATC(input,vcf,cp)
     job.gatc_run()
 
 if __name__ == '__main__':
