@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
-import argparse
+import argparse, os
+
 from gatc.version import __version__
-from gatc.gatc import GATC
-import os
+from gatc.gatc import gatc_run,read_vcf
+# from gatc.cervus_parse_tb import run_cp
 
 def main():
     description=f"""
@@ -23,8 +24,8 @@ def main():
     vcf=args.vcf
     cp=args.cervus_parse
 
-    job=GATC(input,vcf,cp)
-    job.gatc_run()
+    d=read_vcf(vcf)
+    gatc_run(d,input,cp)
 
 if __name__ == '__main__':
 	main()
